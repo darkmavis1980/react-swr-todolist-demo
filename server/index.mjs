@@ -8,14 +8,13 @@ const client = createClient({
 });
 
 const app = express();
+
 app.use(express.json());
 app.use(cors());
 
 client.on('error', (err) => console.log('Redis Client Error', err));
 
 await client.connect();
-
-
 
 app.get('/todo', async (req, res) => {
   // await delay(3000);// artificially add a delay to show the loading
