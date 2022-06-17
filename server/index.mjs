@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { createClient } from 'redis';
-import { validateList, delay } from './lib/utils.js';
+import { validateList, delay } from './lib/utils.mjs';
 
 const client = createClient({
   url: `redis://redis:6379`
