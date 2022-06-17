@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { createClient } from 'redis';
+import { validateList, delay } from './lib/utils.js';
 
 const client = createClient({
   url: `redis://redis:6379`
@@ -14,14 +15,10 @@ client.on('error', (err) => console.log('Redis Client Error', err));
 
 await client.connect();
 
-const validateList = list => {
-  if (!Array.isArray(list)) {
-   return [];
-  }
-  return list;
-}
+
 
 app.get('/todo', async (req, res) => {
+  // await delay(3000);// artificially add a delay to show the loading
   const data = await client.get('list');
   const todo = validateList(JSON.parse(data));
   res.status(200).json({todo});
