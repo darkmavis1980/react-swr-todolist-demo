@@ -32,4 +32,4 @@ Just install dependencies with `npm install`.
 ### Run the application
 
 Once the Backend API is up and running, just run the command `npm run dev`.
-The the application will be available at `http://localhost:3001`.
+The the application will be available at `http://localhost:3000`.
