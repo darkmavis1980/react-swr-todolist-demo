@@ -1,13 +1,91 @@
+:root {
+  --accent-color: LightSlateGray;
+  --input-border: 2px solid var(--accent-color);
+  --app-bg-color: white;
+  --input-bg-color: var(--app-bg-color);
+  --input-padding: 0.5rem;
+}
+
 body {
+  background-color: whitesmoke;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  padding: 1rem;
+}
+
+.todo {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0 0 0 / .2);
+  background-color: white;
+}
+
+.input-field {
+  padding: 2rem;
+  border-bottom: 1px solid rgba(0 0 0 / .2);
+}
+
+.input-field label {
+  display: none;
+}
+
+.input-field input {
+  font-size: 1rem;
+  border: var(--input-border);
+  padding: var(--input-padding);
+  background-color: var(--input-bg-color);
+  border-radius: 5px 0 0 5px;
+}
+
+.input-field button {
+  font-size: 1rem;
+  border: var(--input-border);
+  border-left: none;
+  background-color: var(--input-bg-color);
+  padding: var(--input-padding);
+  border-radius: 0 5px 5px 0;
+}
+
+.list ul {
+  margin: 0;
+  padding: 0;
+}
+
+.list ul li {
+  display: flex;
+  flex: 1fr 20px;
+  flex-direction: row;
+  padding: 0.75rem 1rem;
+  line-height: 2rem;
+  border-bottom: 1px solid rgba(0 0 0 / .1);
+}
+
+.list ul li span {
+  flex: 1;
+}
+
+.list ul li button {
+  width: 26px;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  font-weight: 600;
+  height: 2rem;
+  width: 2rem;
+  background-color: whitesmoke;
+}
+
+.list ul li button:active {
+  background-color: var(--accent-color);
+  color: var(--app-bg-color);
 }

@@ -6,11 +6,13 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <InputField />
-      <Suspense fallback={<p>Loading list</p>}>
-        <TodoList />
-      </Suspense>
+    <div className="container">
+      <div className="todo">
+        <InputField />
+        <Suspense fallback={<p>Loading list</p>}>
+          <TodoList />
+        </Suspense>
+      </div>
     </div>
   )
 }
