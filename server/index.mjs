@@ -48,8 +48,8 @@ app.post('/todo', async (req, res) => {
   }
 });
 
-app.delete('/todo', async (req, res) => {
-  const { task } = req.body;
+app.delete('/todo/:task', async (req, res) => {
+  const { task } = req.params;
   try {
     if (!task) {
       throw new Error('you did not pass any task');

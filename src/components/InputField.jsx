@@ -16,7 +16,7 @@ const InputField = () => {
   }
 
   return (
-    <div>
+    <div className="input-field">
         <label htmlFor="task">Add task</label>
         <input type="text" id="task" onChange={handleChange} />
         <button type="button" onClick={() => {
