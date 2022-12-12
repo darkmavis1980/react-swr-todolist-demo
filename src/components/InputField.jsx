@@ -6,8 +6,9 @@ const InputField = () => {
   const [task, setTask] = useState('');
   const { mutate } = useSWRConfig();
 
-  const updateHandler = (task) => {
-    return axiosInstance.post('/todo', { task }).then(({data}) => data);
+  const updateHandler = async (task) => {
+    await axiosInstance.post('/todo', { task }).then(({data}) => data);
+    setTask('');
   }
 
   const handleChange = (e) => {
@@ -18,7 +19,7 @@ const InputField = () => {
   return (
     <div className="input-field">
         <label htmlFor="task">Add task</label>
-        <input type="text" id="task" onChange={handleChange} />
+        <input type="text" id="task" value={task} onChange={handleChange} />
         <button type="button" onClick={() => {
           mutate('/todo', updateHandler(task));
         }}>Add</button>
